@@ -1,4 +1,4 @@
-// STEP 1 :- TRAINING THE MODEL
+// // STEP 1 :- TRAINING THE MODEL
 
 	// Telling that the neural network that we are creating is sequential
 	const model=tf.sequential();
@@ -21,6 +21,7 @@
 
 
 	// adding 2d array, 1st is the data, and second is the dimension of the input array.
+	// i.e., in tensor2d we have the data, and the shape of the data.
 	const xs = tf.tensor2d([-1.0,0.0,1.0,2.0,3.0,4.0],[6,1])
 	const ys = tf.tensor2d([-3.0,-1.0,2.0,3.0,5.0,7.0],[6,1])
 
@@ -47,6 +48,7 @@
 				epochs:500,
 				callbacks:{
 					// async anonymous function attached as an object key value.
+					// callback attached which happens/executed at the end of every epoch
 					onEpochEnd: async(epochs,logs) => {
 						console.log(`Epoch: ${epochs} Loss: ${logs.loss}`);
 					}
